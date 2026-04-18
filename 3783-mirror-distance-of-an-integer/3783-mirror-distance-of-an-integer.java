@@ -1,15 +1,12 @@
 class Solution {
     public int mirrorDistance(int n) {
 
-        int reverse = 0;
-        int  t  = n;
-        while(t != 0){
+        if(n <= 9) return 0;
+        
+        StringBuilder  s = new StringBuilder(String.valueOf(n));
+        int   reverseNum = Integer.parseInt(s.reverse().toString());
+        return Math.abs(n - reverseNum);
+        
 
-            int digit = t%10;
-            reverse = 10*reverse + digit;
-            t /= 10;      
-        } 
-        System.out.println(reverse);
-        return Math.abs(n - reverse);    
     }
 }
